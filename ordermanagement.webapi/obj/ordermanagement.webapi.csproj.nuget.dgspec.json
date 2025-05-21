@@ -11,7 +11,7 @@
         "projectName": "ordermanagement.application",
         "projectPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.application\\ordermanagement.application.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.application\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -151,7 +151,7 @@
         "projectName": "ordermanagement.infrastructure",
         "projectPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.infrastructure\\ordermanagement.infrastructure.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -229,7 +229,7 @@
         "projectName": "ordermanagement.webapi",
         "projectPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.webapi\\ordermanagement.webapi.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.webapi\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\ordermanagement\\ordermanagement.webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

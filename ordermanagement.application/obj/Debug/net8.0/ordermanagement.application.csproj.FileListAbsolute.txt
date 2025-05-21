@@ -13,3 +13,4 @@ C:\Users\Admin\source\repos\OrderManagement\ordermanagement.application\obj\Debu
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.application\obj\Debug\net8.0\refint\ordermanagement.application.dll
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.application\obj\Debug\net8.0\ordermanagement.application.pdb
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.application\obj\Debug\net8.0\ref\ordermanagement.application.dll
+C:\Users\Admin\source\repos\ordermanagement\ordermanagement.application\obj\Debug\net8.0\ordermanagement.application.sourcelink.json

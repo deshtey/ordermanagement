@@ -15,3 +15,4 @@ C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\D
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\refint\ordermanagement.infrastructure.dll
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.pdb
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ref\ordermanagement.infrastructure.dll
+C:\Users\Admin\source\repos\ordermanagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.sourcelink.json

@@ -9,3 +9,4 @@ C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\refint\ordermanagement.domain.dll
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.pdb
 C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ref\ordermanagement.domain.dll
+C:\Users\Admin\source\repos\ordermanagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.sourcelink.json
