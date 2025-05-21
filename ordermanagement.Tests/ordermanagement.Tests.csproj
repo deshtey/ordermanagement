@@ -7,6 +7,8 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+	  <PreserveCompilationContext>true</PreserveCompilationContext>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +31,7 @@
     <ProjectReference Include="..\ordermanagement.application\ordermanagement.application.csproj" />
     <ProjectReference Include="..\ordermanagement.domain\ordermanagement.domain.csproj" />
     <ProjectReference Include="..\ordermanagement.infrastructure\ordermanagement.infrastructure.csproj" />
+    <ProjectReference Include="..\ordermanagement.webapi\ordermanagement.webapi.csproj" />
   </ItemGroup>
 
 </Project>

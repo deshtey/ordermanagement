@@ -7,7 +7,7 @@ namespace ordermanagement.application.Services
     {
         Task<IEnumerable<Customer>> GetAllCustomersAsync();
         Task<Customer?> GetCustomerByIdAsync(int id);
-        Task<Customer> CreateCustomerAsync(Customer customer);
+        Task<Customer> CreateCustomerAsync(CreateCustomerDto customer);
         Task UpdateCustomerAsync(Customer customer);
         Task DeleteCustomerAsync(int id);
     }
@@ -31,9 +31,16 @@ namespace ordermanagement.application.Services
             return _customerRepository.GetByIdAsync(id);
         }
 
-        public Task<Customer> CreateCustomerAsync(Customer customer)
+        public Task<Customer> CreateCustomerAsync(CreateCustomerDto customer)
         {
-            return _customerRepository.AddAsync(customer);
+            var newCustomer = new Customer(
+                customer.Name,
+                customer.Email,
+                customer.Phone,
+                customer.Address,
+                customer.Segment);
+            newCustomer.RegisteredOn = DateTime.Now;
+            return _customerRepository.AddAsync(newCustomer);
         }
 
         public Task UpdateCustomerAsync(Customer customer)

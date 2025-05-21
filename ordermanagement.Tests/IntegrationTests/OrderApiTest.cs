@@ -1,16 +1,15 @@
 ﻿using ordermanagement.domain.Entities;
-using ordermanagement.domain.Enums;
 using System.Net.Http.Json;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace OrderManagement.Tests.IntegrationTests
 {
-    public class OrderApiTests : IClassFixture<CustomWebApplicationFactory<Program>>
+    public class OrderApiTests : IClassFixture<CustomWebApplicationFactory>
     {
         private readonly HttpClient _client;
-        private readonly CustomWebApplicationFactory<Program> _factory;
-
-        public OrderApiTests(CustomWebApplicationFactory<Program> factory)
+        private readonly WebApplicationFactory<Program> _factory;
+        public OrderApiTests(CustomWebApplicationFactory factory)
         {
             _factory = factory;
             _client = _factory.CreateClient();
@@ -24,24 +23,22 @@ namespace OrderManagement.Tests.IntegrationTests
             {
                 Name = $"Test Customer {Guid.NewGuid()}",
                 Email = $"test{Guid.NewGuid()}@example.com",
-                PhoneNumber = "555-123-4567",
+                Phone = "555-123-4567",
                 Address = "123 Test St",
                 Segment = CustomerSegment.NewCustomer,
                 SignupDate = DateTime.UtcNow.AddDays(-60)
             };
 
             // Act
-            // Remove the leading slash to avoid double slashes if base URL already ends with one
             var response = await _client.PostAsJsonAsync("api/customers", createCustomerRequest);
-
+            var fff = await response.Content.ReadAsStringAsync();
             // Assert
-            response.EnsureSuccessStatusCode(); // Uncomment this to ensure the request succeeded
+            response.EnsureSuccessStatusCode(); 
             var customer = await response.Content.ReadFromJsonAsync<Customer>();
 
             Assert.NotNull(customer);
             Assert.Equal(createCustomerRequest.Name, customer.Name);
             Assert.Equal(createCustomerRequest.Email, customer.Email);
-            // Add more assertions as needed
         }
 
         private async Task<Customer> CreateTestCustomer(CustomerSegment segment)
@@ -51,7 +48,7 @@ namespace OrderManagement.Tests.IntegrationTests
             {
                 Name = $"Test Customer {Guid.NewGuid()}",
                 Email = $"test{Guid.NewGuid()}@example.com",
-                PhoneNumber = "555-123-4567",
+                Phone = "555-123-4567",
                 Address = "123 Test St",
                 Segment = segment,
                 SignupDate = DateTime.UtcNow.AddDays(-60)
@@ -86,7 +83,7 @@ namespace OrderManagement.Tests.IntegrationTests
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Phone { get; set; }
         public string Address { get; set; }
         public CustomerSegment Segment { get; set; }
         public DateTime SignupDate { get; set; }

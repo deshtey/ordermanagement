@@ -55,7 +55,7 @@ namespace ordermanagement.webapi.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(Customer), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<Customer>> CreateCustomer(Customer customer)
+        public async Task<ActionResult<Customer>> CreateCustomer(CreateCustomerDto customer)
         {
             if (!ModelState.IsValid)
             {
