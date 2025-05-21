@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\bin\Debug\net8.0\ordermanagement.domain.deps.json
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\bin\Debug\net8.0\ordermanagement.domain.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\bin\Debug\net8.0\ordermanagement.domain.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.AssemblyInfo.cs
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\refint\ordermanagement.domain.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ordermanagement.domain.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.domain\obj\Debug\net8.0\ref\ordermanagement.domain.dll

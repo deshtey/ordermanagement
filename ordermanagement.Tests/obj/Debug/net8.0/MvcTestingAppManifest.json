@@ -1,0 +1,5 @@
+{
+  "ordermanagement.application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.application",
+  "ordermanagement.domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.domain",
+  "ordermanagement.infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\Admin\\source\\repos\\OrderManagement\\ordermanagement.infrastructure"
+}

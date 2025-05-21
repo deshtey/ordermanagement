@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.AssemblyInfo.cs
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.infrastructure.deps.json
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.infrastructure.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.infrastructure.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.application.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.domain.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.application.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\bin\Debug\net8.0\ordermanagement.domain.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\orderman.AE86EA93.Up2Date
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\refint\ordermanagement.infrastructure.dll
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ordermanagement.infrastructure.pdb
+C:\Users\Admin\source\repos\OrderManagement\ordermanagement.infrastructure\obj\Debug\net8.0\ref\ordermanagement.infrastructure.dll
