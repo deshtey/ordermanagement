@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ordermanagement.application.Contracts;
 using ordermanagement.application.Services;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace ordermanagement.application
 {
@@ -18,7 +19,7 @@ namespace ordermanagement.application
             services.AddScoped<IDiscountService, DiscountService>();
             services.AddScoped<IOrderStatusService, OrderStatusService>();
             services.AddScoped<IOrderAnalyticsService, OrderAnalyticsService>();
-
+            services.AddMemoryCache();
             return services;
         }
     }

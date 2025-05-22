@@ -6,6 +6,7 @@ namespace ordermanagement.webapi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiVersion("1.0")]
     public class CustomersController : ControllerBase
     {
         private readonly ICustomerService _customerService;

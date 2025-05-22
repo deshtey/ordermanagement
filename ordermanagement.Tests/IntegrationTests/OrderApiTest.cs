@@ -1,6 +1,5 @@
 ﻿using ordermanagement.domain.Entities;
 using System.Net.Http.Json;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace OrderManagement.Tests.IntegrationTests
@@ -56,15 +55,12 @@ namespace OrderManagement.Tests.IntegrationTests
 
             try
             {
-                // Act - Remove the leading slash
                 var response = await _client.PostAsJsonAsync("api/customers", createCustomerRequest);
 
-                // Debug information if needed
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
                     Console.WriteLine($"HTTP Error: {response.StatusCode}, Content: {errorContent}");
-                    // You could also log this to the test output
                 }
 
                 response.EnsureSuccessStatusCode();
@@ -78,7 +74,6 @@ namespace OrderManagement.Tests.IntegrationTests
         }
     }
 
-    // Request models remain the same
     public class CreateCustomerRequest
     {
         public string Name { get; set; }
@@ -88,6 +83,4 @@ namespace OrderManagement.Tests.IntegrationTests
         public CustomerSegment Segment { get; set; }
         public DateTime SignupDate { get; set; }
     }
-
-    // Other request models remain the same...
 }
