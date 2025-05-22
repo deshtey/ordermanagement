@@ -6,23 +6,23 @@ This project is a .NET 8 Web API that simulates an order management system. It's
 Table of Contents
 -----------------
 
-*   [Overview](https://www.google.com/search?q=#overview)
+*   [Overview](#Overview)
     
-*   [Features](https://www.google.com/search?q=#features)
+*   [Features](#features)
     
-*   [Architecture & Design](https://www.google.com/search?q=#architecture--design)
+*   [Architecture & Design](#architecture--design)
     
-*   [In-Memory Data Storage](https://www.google.com/search?q=#in-memory-data-storage)
+*   [In-Memory Data Storage](#in-memory-data-storage)
     
-*   [Testing](https://www.google.com/search?q=#testing)
+*   [Testing](#testing)
     
-*   [API Documentation (Swagger/OpenAPI)](https://www.google.com/search?q=#api-documentation-swaggeropenapi)
+*   [API Documentation (Swagger/OpenAPI)](#api-documentation-swaggeropenapi)
     
-*   [Performance Considerations](https://www.google.com/search?q=#performance-considerations)
+*   [Performance Considerations](#performance-considerations)
     
-*   [Getting Started](https://www.google.com/search?q=#getting-started)
+*   [Getting Started](#getting-started)
     
-*   [Assumptions](https://www.google.com/search?q=#assumptions)
+*   [Assumptions](#assumptions)
     
 
 Overview
