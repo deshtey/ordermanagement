@@ -157,13 +157,14 @@ Getting Started
 
 To run this project locally:
 
-1.  git clone cd OrderManagementSystem
+1.  git clone
+2.  cd ordermanagement
     
-2.  dotnet restore
+3.  dotnet restore
     
-3.  dotnet run --project src/OrderManagementSystem.API
+4.  dotnet run --project ordermanagement.webapi
     
-4.  **Access Swagger UI:** Open your web browser and navigate to the /swagger endpoint (e.g., https://localhost:7080/swagger).
+5.  **Access Swagger UI:** Open your web browser and navigate to the /swagger endpoint (e.g., https://localhost:7080/swagger).
     
 
 Assumptions
