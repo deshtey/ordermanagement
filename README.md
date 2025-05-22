@@ -1,7 +1,7 @@
 Order Management System API
 ===========================
 
-This project is a .NET 8 Web API that simulates an order management system. It's designed with a layered architecture, emphasizing clean code, proper design patterns, and efficient implementation within a given set of requirements. For demonstration and development, the system utilizes **in-memory data storage**, eliminating the need for a persistent database setup.
+This project is a .NET 8 Web API that simulates an order management system. It's designed with clean architecture and utilizes an **in-memory data storage**.
 
 Table of Contents
 -----------------
@@ -45,11 +45,7 @@ The API provides the following core functionalities:
         
 2.  **Discounting System:**
     
-    *   Applies **different promotion rules** based on customer segments (e.g., Platinum, New Customer) and order history.
-        
-    *   Supports various discount types (e.g., percentage, fixed amount).
-        
-    *   Uses the **Strategy Pattern** for extensible discount rules.
+    *   Applies **different promotion rules** based on customer segments (e.g., VIP, New Customer) and order history.
         
 3.  **Order Status Tracking:**
     
@@ -89,23 +85,19 @@ The project is structured following a **layered architecture** to promote separa
         
     *   Contains Controllers, DTOs (Data Transfer Objects), and Application Services.
         
-    *   Application Services (OrderService, DiscountService, OrderTrackingService, AnalyticsService) orchestrate business logic by interacting with Domain Services and Repositories.
+    *   Application Services (OrderService, DiscountService, OrderTrackingService, AnalyticsService).
         
 *   **OrderManagementSystem.Core (Domain Layer):**
     
-    *   Houses the core business logic, entities (Order, Customer, Product, Discount, OrderItem), value objects, and domain interfaces (e.g., IDiscountRule, IOrderRepository).
+    *   Houses the core business logic, entities (Order, Customer, Product, Discount, OrderItem), value objects.
         
-    *   Entities encapsulate their own behavior (e.g., Order status transitions).
-        
-    *   Defines custom exceptions for domain rule violations (e.g., InvalidOrderStatusTransitionException).
+    *   Entities encapsulate their own behavior (e.g., Order status transitions).        
         
 *   **OrderManagementSystem.Infrastructure (Infrastructure Layer):**
     
     *   Provides concrete implementations for interfaces defined in the Core layer.
         
-    *   Contains **in-memory repository implementations** (e.g., InMemoryOrderRepository) for data persistence during runtime.
-        
-    *   Houses specific IDiscountRule implementations (e.g., NewCustomerDiscountRule).
+    *   Contains **in-memory repository implementations** (e.g., InMemoryOrderRepository) for data persistence during runtime.        
         
 
 In-Memory Data Storage
@@ -169,7 +161,7 @@ To run this project locally:
     
 2.  dotnet restore
     
-3.  dotnet run --project src/OrderManagementSystem.APIThe API will typically run on https://localhost:7080 (or a similar port). The console output will show the exact URLs.
+3.  dotnet run --project src/OrderManagementSystem.API
     
 4.  **Access Swagger UI:** Open your web browser and navigate to the /swagger endpoint (e.g., https://localhost:7080/swagger).
     
@@ -181,8 +173,6 @@ Assumptions
     
 *   **Simplified Data Models:** Entity properties and relationships are simplified for the scope of this assessment.
     
-*   **Error Handling:** Basic error handling is in place, but a production system would require more comprehensive global error handling strategies (e.g., middleware).
+*   **Error Handling:** Basic error handling is in place, but a production system would require more comprehensive global error handling strategies (e.g., serilog).
     
-*   **Security:** Authentication and authorization mechanisms are not implemented in this version.
-    
-*   **Concurrency:** In-memory repositories use ConcurrentDictionary for basic thread safety, suitable for demonstration purposes. More advanced concurrency control might be needed for high-load production scenarios.
+*   **Security:** Authentication and authorization mechanisms are not implemented in this version.    
