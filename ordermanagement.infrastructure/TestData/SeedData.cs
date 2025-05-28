@@ -29,7 +29,6 @@ namespace ordermanagement.infrastructure.TestData
                 {
                     Id = 5
                 },
-
             };
         }
 
@@ -44,8 +43,6 @@ namespace ordermanagement.infrastructure.TestData
                 { Id = 3 },
                 new Discount("Premium Discount", "Premium10", 0.1m, 0, new List<CustomerSegment> { CustomerSegment.Premium },null)
                 { Id =  4},
-
-
             };
         }
 

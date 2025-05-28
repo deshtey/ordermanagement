@@ -38,37 +38,14 @@ namespace ordermanagement.application.Services
         {
             var allDiscounts = await _discountRepository.GetAllAsync();
             var applicableDiscounts = new List<Discount>();
-
+            var customerOrders = await _orderRepository.GetOrdersByCustomerIdAsync(customer.Id);
+            var orderCount = customerOrders.Count();
             foreach (var discount in allDiscounts)
             {
                 // Check if the discount is applicable to this customer
-                if (IsDiscountApplicableToCustomer(discount, customer))
+                if (IsDiscountApplicableToCustomer(discount, customer, orderCount))
                 {
                     applicableDiscounts.Add(discount);
-                }
-            }
-
-            // Check for loyalty discount eligibility
-            var customerOrders = await _orderRepository.GetOrdersByCustomerIdAsync(customer.Id);
-            var orderCount = customerOrders.Count();
-
-            // Apply loyalty discount if 5 or more orders
-            if (orderCount >= 5)
-            {
-                var loyaltyDiscount = await _discountRepository.GetByPromoCodeAsync("LOYAL50");
-                if (loyaltyDiscount != null && !applicableDiscounts.Any(d => d.Id == loyaltyDiscount.Id))
-                {
-                    applicableDiscounts.Add(loyaltyDiscount);
-                }
-            }
-
-            // Apply new customer discount if first order
-            if (orderCount == 0)
-            {
-                var newCustomerDiscount = await _discountRepository.GetByPromoCodeAsync("NEWCUST10");
-                if (newCustomerDiscount != null && !applicableDiscounts.Any(d => d.Id == newCustomerDiscount.Id))
-                {
-                    applicableDiscounts.Add(newCustomerDiscount);
                 }
             }
 
@@ -77,7 +54,7 @@ namespace ordermanagement.application.Services
 
         public async Task<decimal> CalculateDiscountAmountAsync(Order order, string? promoCode = null)
         {
-            decimal discountAmount = 0;
+            var discounts = new List<Discount>();
 
             // If promo code is provided, try to apply it
             if (!string.IsNullOrEmpty(promoCode))
@@ -89,7 +66,7 @@ namespace ordermanagement.application.Services
                     // Check if discount is applicable to this customer
                     if (IsDiscountApplicableToCustomer(promoDiscount, order.Customer))
                     {
-                        discountAmount = order.TotalAmount * promoDiscount.Value;
+                        discounts.Add(promoDiscount);
                     }
                 }
             }
@@ -102,16 +79,17 @@ namespace ordermanagement.application.Services
                 {
                     // Apply the best discount (highest value)
                     var bestDiscount = applicableDiscounts.OrderByDescending(d => d.Value).First();
-                    order.AppliedDiscounts.Add(bestDiscount);
-                    order.ApplyDiscounts(new List<Discount> { bestDiscount });
+                    //order.AppliedDiscounts.Add(bestDiscount);
+                    discounts.Add(bestDiscount);
                 }
             }
+            order.ApplyDiscounts(discounts);
 
             return order.DiscountAmount;
         }
 
         // Helper method to check if a discount applies to a specific customer
-        private bool IsDiscountApplicableToCustomer(Discount discount, Customer customer)
+        private bool IsDiscountApplicableToCustomer(Discount discount, Customer customer, int orderCount = 0)
         {
             // If no customer segments specified, discount is universal
             if (discount.CustomerSegments.Count == 0)
@@ -123,7 +101,7 @@ namespace ordermanagement.application.Services
             bool isInSegment = discount.CustomerSegments.Contains(customer.Segment);
 
             // Must be in segment AND within signup date range
-            return isInSegment && IsWithinSignupDateRange(discount, customer);
+            return isInSegment && IsWithinSignupDateRange(discount, customer) && orderCount >= discount.MinOrders;
         }
 
         private bool IsWithinSignupDateRange(Discount discount, Customer customer)

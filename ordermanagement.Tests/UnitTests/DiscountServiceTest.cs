@@ -4,9 +4,9 @@ using ordermanagement.application.Contracts;
 using ordermanagement.application.Contracts.InMemoryRepo;
 using ordermanagement.application.Services;
 using ordermanagement.domain.Entities;
-using ordermanagement.domain.Enums;
 using ordermanagement.infrastructure.InMemoryRepo;
 
+namespace ordermanagement.Tests.UnitTests;
 public class DiscountServiceTests
 {
     [Fact]
@@ -17,7 +17,7 @@ public class DiscountServiceTests
         var mockDiscountRepo = new Mock<InMemoryDiscountRepository>();
         var mockOrderRepo = new Mock<InMemoryOrderRepo>();
         var mockCustomerRepo = new Mock<InMemoryCustomerRepo>();
-
+        int CustomerId = 2;
 
         // Create service instances
         var discountService = new DiscountService(
@@ -37,7 +37,7 @@ public class DiscountServiceTests
             "123 Test St, Test City, TC 12345",
             CustomerSegment.VIP)
         {
-            Id = 2
+            Id = CustomerId
         };
 
 
@@ -109,5 +109,48 @@ public class DiscountServiceTests
 
         // Assert
         Assert.Equal(Expected, discount);
+    }
+
+    [Fact]
+    public async Task CalculateDiscountAmount_FirstOrderWithPromoCode_ReturnsCorrectDiscount()
+    {
+        // Arrange
+        string promoCode = "FIRSTORDER10";
+        decimal expectedDiscount = 134.4m; 
+
+        var mockDiscountRepo = new Mock<IDiscountRepository>();
+        var mockOrderRepo = new Mock<IOrderRepository>();
+
+        // Setup discount repository mock
+        mockDiscountRepo.Setup(d => d.GetByPromoCodeAsync(promoCode))
+            .ReturnsAsync(new Discount(
+                "First Order Discount",
+                promoCode,
+                0.10m,
+                0,
+                new List<CustomerSegment> { CustomerSegment.Regular },
+                null)
+            { Id = 1 });
+
+        // Create test data
+        var customer = new Customer("Jane Ngoiri", "jane@gmail.com", "0723985743", "435 Kiambu", CustomerSegment.Regular);
+        var order = new Order(customer.Id, customer.Address, customer.Address,
+            [
+                new OrderItem(101, 102, 12, 12m),
+            new OrderItem(101, 103, 100, 12m)
+            ])
+        {
+            Id = 101,
+            Customer = customer
+        };
+
+        var discountService = new DiscountService(mockDiscountRepo.Object, mockOrderRepo.Object);
+
+        // Act
+        var actualDiscount = await discountService.CalculateDiscountAmountAsync(order, promoCode);
+
+        // Assert
+        Assert.Equal(expectedDiscount, actualDiscount);
+        mockDiscountRepo.Verify(d => d.GetByPromoCodeAsync(promoCode), Times.Once);
     }
 }

@@ -63,15 +63,12 @@ namespace ordermanagement.domain.Entities
             DeliveredDate = DateTime.UtcNow;
         }
 
-        public void ApplyDiscounts(IEnumerable<Discount> discounts)
+        public void ApplyDiscounts(ICollection<Discount> discounts)
         {
             AppliedDiscounts.Clear();
             DiscountAmount = 0;
-
-            foreach (var discount in discounts)
-            {
-                AppliedDiscounts.Add(discount);
-            }
+            this.AppliedDiscounts = discounts;
+       
 
             CalculateDiscountAmount();
             RecalculateFinalAmount();

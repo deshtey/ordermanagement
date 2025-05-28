@@ -1,7 +1,8 @@
-﻿using ordermanagement.domain.Entities;
+﻿using ordermanagement.application.Contracts;
+using ordermanagement.domain.Entities;
 using ordermanagement.infrastructure.TestData;
 
-namespace ordermanagement.application.Contracts.InMemoryRepo
+namespace ordermanagement.infrastructure.InMemoryRepo
 {
     public class InMemoryCustomerRepo : ICustomerRepository
     {

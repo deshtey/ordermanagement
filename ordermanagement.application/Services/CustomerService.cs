@@ -26,9 +26,9 @@ namespace ordermanagement.application.Services
             return _customerRepository.GetAllAsync();
         }
 
-        public Task<Customer?> GetCustomerByIdAsync(int id)
+        public async Task<Customer?> GetCustomerByIdAsync(int id)
         {
-            return _customerRepository.GetByIdAsync(id);
+            return await _customerRepository.GetByIdAsync(id);
         }
 
         public Task<Customer> CreateCustomerAsync(CreateCustomerDto customer)
