@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-using ordermanagement.application;
 using ordermanagement.application.Contracts;
 using ordermanagement.application.Contracts.InMemoryRepo;
 using ordermanagement.application.Services;
-using ordermanagement.infrastructure;
 using ordermanagement.infrastructure.InMemoryRepo;
 using ordermanagement.infrastructure.TestData;
 

@@ -18,7 +18,7 @@ namespace ordermanagement.application
             services.AddScoped<IDiscountStrategy, DiscountStrategy>();
             services.AddScoped<IDiscountService, DiscountService>();
             services.AddScoped<IOrderStatusService, OrderStatusService>();
-            services.AddScoped<IOrderAnalyticsService, OrderAnalyticsService>();
+            services.AddScoped<IOrderAnalyticsService, OptimizedOrderAnalyticsService>();
             services.AddMemoryCache();
             return services;
         }
